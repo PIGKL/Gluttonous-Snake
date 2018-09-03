@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .map {
+            width: 800px;
+            height: 600px;
+            background-color: #ccc;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="map"></div>
+<script src="../common.js"></script>
+<script src="food.js"></script>
+<script src="snake.js"></script>
+<script src="game.js"></script>
+<script>
+    //第一天做的
+    // //自调用函数生成随机数
+    // (function (win) {
+    //     function Random() {
+    //     }
+    //
+    //     Random.prototype.getRandom = function (max, min) {
+    //         return Math.floor(Math.random() * (max - min) + min);
+    //     };
+    //     //把变量给浏览器顶级对象Window，让局部变量变为全局变量
+    //     win.Random = new Random;
+    // })(window);
+    //
+    // //产生小方块
+    // (function () {
+    //     //通过类样式名字获取div
+    //     var map = document.querySelector(".map");
+    //
+    //     //创建食物对象
+    //     function Food(width, height, color) {
+    //         this.width = width || 20;
+    //         this.height = height || 20;
+    //         this.x = 0;
+    //         this.y = 0;
+    //         this.color = color;
+    //         //生成小方块
+    //         this.element = document.createElement("div");
+    //     }
+    //     //初始化小方块的显示效果 ----显示在地图上
+    //     Food.prototype.inte = function (map) {
+    //         //设置小方块的样式
+    //         var div = this.element;
+    //         div.style.position = "absolute";
+    //         div.style.width = this.width + "px";
+    //         div.style.height = this.height + "px";
+    //         div.style.backgroundColor = this.color;
+    //         map.appendChild(div);
+    //         this.render(map);
+    //     };
+    //
+    //     //产生随机数并改变div的位置
+    //     Food.prototype.render = function (map) {
+    //         var x = Random.getRandom((map.offsetWidth / this.width) * this.width, 0);
+    //         var y = Random.getRandom((map.offsetHeight / this.height) * this.height, 0);
+    //         this.x = x;
+    //         this.y = y;
+    //         var div = this.element;
+    //         div.style.left = x + "px";
+    //         div.style.top = y + "px";
+    //     };
+    //     //实例化对象
+    //     var fd = new Food(20, 20, "red");
+    //     fd.inte(map);
+    // })();////  //
+    var game = new Game(document.querySelector(".map"));
+    game.init();
+
+
+    // //测试
+    // var f = new Food();
+    // f.inte(document.querySelector(".map"));
+    // f.inte(document.querySelector(".map"));
+    //
+    // var san = new Sanke();
+    // san.inte(document.querySelector(".map"));
+    // setInterval(function () {
+    //     san.move(f, document.querySelector(".map"));
+    //     san.inte(document.querySelector(".map"));
+    // }, 150)
+</script>
+</body>
+</html>
